@@ -1,0 +1,858 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>932</width>
+    <height>771</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>TOPSIS - ARAS - VIKOR  HESAPLAMASI</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="font">
+       <font>
+        <family>MS Shell Dlg 2</family>
+        <pointsize>12</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#tabWidget{
+border-image: url(:/addBacground/icons/istockphoto-952039286-170667a.jpg);
+}</string>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <property name="documentMode">
+       <bool>false</bool>
+      </property>
+      <widget class="QWidget" name="tab_wayCalculate">
+       <property name="styleSheet">
+        <string notr="true">#tab_wayCalculate{
+	border-image: url(:/background image/istockphoto-952039286-170667a.jpg);
+}</string>
+       </property>
+       <attribute name="title">
+        <string>ÇKKVT Hesaplaması</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_3">
+        <item row="0" column="0">
+         <widget class="QFrame" name="horizontalFrame_selectFile">
+          <layout class="QHBoxLayout" name="horizontalLayout" stretch="15,60,20">
+           <item>
+            <widget class="QLabel" name="label_fileName">
+             <property name="font">
+              <font>
+               <pointsize>14</pointsize>
+               <weight>75</weight>
+               <italic>false</italic>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: rgb(255, 255, 255);</string>
+             </property>
+             <property name="text">
+              <string>Dosya Adı: </string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_selectedFileName">
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(85, 0, 127);
+font: 25 9pt &quot;Microsoft JhengHei Light&quot;;
+font: 87 8pt &quot;Arial Black&quot;;
+border-radius:5px</string>
+             </property>
+             <property name="text">
+              <string>Sadece xls(excel) dosya tipi seçiniz...</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btn_fileway">
+             <property name="font">
+              <font>
+               <pointsize>9</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-image: url(:/background image/istockphoto-952039286-170667a.jpg);
+
+color: rgb(255, 255, 255);</string>
+             </property>
+             <property name="text">
+              <string>DOSYA SEÇ</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QFrame" name="horizontalFrame_wayProcess">
+          <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="70">
+           <item>
+            <widget class="QFrame" name="horizontalFrame_selectWay">
+             <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="20,80">
+              <item>
+               <widget class="QLabel" name="label_selectWay">
+                <property name="font">
+                 <font>
+                  <pointsize>14</pointsize>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">color: rgb(255, 255, 255);</string>
+                </property>
+                <property name="text">
+                 <string>Yöntem Seç: </string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QComboBox" name="cBox_yontem">
+                <property name="enabled">
+                 <bool>true</bool>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">background-color: rgb(255, 255, 255);
+border-radius:5px</string>
+                </property>
+                <property name="currentText">
+                 <string>TOPSIS</string>
+                </property>
+                <item>
+                 <property name="text">
+                  <string>TOPSIS</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>ARAS</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>VIKOR</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QFrame" name="gridFrame_showsCharts">
+          <layout class="QGridLayout" name="gridLayout">
+           <item row="2" column="1">
+            <widget class="QFrame" name="horizontalFrame_rButton_forCharts">
+             <layout class="QHBoxLayout" name="horizontalLayout_5"/>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QTableWidget" name="tableWidget_xlsTable">
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+border-radius : 10px</string>
+             </property>
+             <property name="sizeAdjustPolicy">
+              <enum>QAbstractScrollArea::AdjustToContents</enum>
+             </property>
+             <attribute name="horizontalHeaderCascadingSectionResizes">
+              <bool>true</bool>
+             </attribute>
+             <attribute name="horizontalHeaderMinimumSectionSize">
+              <number>100</number>
+             </attribute>
+             <attribute name="verticalHeaderCascadingSectionResizes">
+              <bool>true</bool>
+             </attribute>
+             <attribute name="verticalHeaderMinimumSectionSize">
+              <number>60</number>
+             </attribute>
+             <attribute name="verticalHeaderDefaultSectionSize">
+              <number>100</number>
+             </attribute>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QTableWidget" name="tableWidget_results">
+             <property name="styleSheet">
+              <string notr="true">background-color: rgb(255, 255, 255);
+border-radius : 10px</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <layout class="QHBoxLayout" name="horizontalLayout_weightCalculate" stretch="40,60">
+             <item>
+              <widget class="QCheckBox" name="cBox_isThereWeight">
+               <property name="font">
+                <font>
+                 <pointsize>11</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">color: rgb(255, 255, 38);</string>
+               </property>
+               <property name="text">
+                <string>Ağırlık Değeri Yok</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btn_weightCalculete">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>11</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="mouseTracking">
+                <bool>false</bool>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">background-image: url(:/background image/istockphoto-952039286-170667a.jpg);
+color: rgb(255, 255, 51);
+</string>
+               </property>
+               <property name="text">
+                <string>Ağırlık Hesapla</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item row="3" column="0">
+            <widget class="QPushButton" name="btn_hesapla">
+             <property name="enabled">
+              <bool>true</bool>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>13</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-image: url(:/background image/istockphoto-952039286-170667a.jpg);
+color: rgb(255, 255, 255);</string>
+             </property>
+             <property name="text">
+              <string>HESAPLA</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="QPushButton" name="btn_writeResults">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>14</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: rgb(255, 255, 255);
+background-image: url(:/background image/istockphoto-952039286-170667a.jpg);</string>
+             </property>
+             <property name="text">
+              <string> Excele Sonuç Yazdır</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QFrame" name="verticalFrame_writeResults">
+          <layout class="QVBoxLayout" name="verticalLayout">
+           <item>
+            <widget class="QFrame" name="horizontalFrame_rButtonSelectWriteWay">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <layout class="QHBoxLayout" name="horizontalLayout_4" stretch=""/>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_weightCalculate">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">#tab_weightCalculate{
+	border-image: url(:/background image/istockphoto-952039286-170667a.jpg);
+}</string>
+       </property>
+       <attribute name="title">
+        <string>Ağırlık Hesaplaması</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <spacer name="verticalSpacer_4">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Preferred</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>40</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <layout class="QGridLayout" name="gridLayout_4">
+          <item row="3" column="1">
+           <spacer name="verticalSpacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Preferred</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="2" column="0">
+           <spacer name="horizontalSpacer_3">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Preferred</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="2" column="1">
+           <widget class="QTableWidget" name="tableWidget_weights">
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(255, 255, 255);
+border-radius: 10px</string>
+            </property>
+            <property name="editTriggers">
+             <set>QAbstractItemView::AnyKeyPressed|QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed</set>
+            </property>
+            <property name="alternatingRowColors">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="3">
+           <widget class="QTableWidget" name="tableWidget_resultWeight">
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(255, 255, 255);
+border-radius: 10px</string>
+            </property>
+            <property name="columnCount">
+             <number>2</number>
+            </property>
+            <attribute name="horizontalHeaderCascadingSectionResizes">
+             <bool>true</bool>
+            </attribute>
+            <attribute name="verticalHeaderCascadingSectionResizes">
+             <bool>true</bool>
+            </attribute>
+            <column>
+             <property name="text">
+              <string>KRİTERLER</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>AĞIRLIKLAR</string>
+             </property>
+            </column>
+           </widget>
+          </item>
+          <item row="0" column="3">
+           <widget class="QLabel" name="label_weightRank">
+            <property name="font">
+             <font>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: rgb(255, 255, 255);
+border-radius: 5px</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="2">
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Preferred</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLabel" name="label_2">
+            <property name="font">
+             <font>
+              <pointsize>12</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+              <strikeout>false</strikeout>
+             </font>
+            </property>
+            <property name="layoutDirection">
+             <enum>Qt::LeftToRight</enum>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color: rgb(255, 255, 255);
+border-radius: 5px
+</string>
+            </property>
+            <property name="text">
+             <string>TUTARLILIK ORANI DEĞERİ : </string>
+            </property>
+            <property name="textFormat">
+             <enum>Qt::AutoText</enum>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="1">
+           <widget class="QPushButton" name="btn_wCalculate">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>11</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-image: url(:/background image/istockphoto-952039286-170667a.jpg);
+color: rgb(255, 255, 255);
+</string>
+            </property>
+            <property name="text">
+             <string>AĞIRLIK HESAPLA</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="4">
+           <spacer name="horizontalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Preferred</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="4" column="3">
+           <widget class="QPushButton" name="btn_addWayCal">
+            <property name="font">
+             <font>
+              <pointsize>12</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-image: url(:/background image/istockphoto-952039286-170667a.jpg);
+color: rgb(255, 255, 255);
+</string>
+            </property>
+            <property name="text">
+             <string>Ağırlıkları Matrise Ekle</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="1">
+           <spacer name="verticalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Preferred</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="1" column="1">
+           <spacer name="verticalSpacer_3">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Preferred</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btn_saveWeights">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-image: url(:/background image/istockphoto-952039286-170667a.jpg);
+color: rgb(255, 255, 255);
+</string>
+          </property>
+          <property name="text">
+           <string>Ağırlıkları Excele Kaydet</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../image.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>btn_writeResults</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>btn_save_results_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>880</x>
+     <y>663</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>439</x>
+     <y>569</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_hesapla</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>calculate()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>70</x>
+     <y>663</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>2</x>
+     <y>28</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_fileway</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>btn_fileway_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>809</x>
+     <y>75</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>623</x>
+     <y>102</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_fileway</sender>
+   <signal>clicked()</signal>
+   <receiver>tableWidget_xlsTable</receiver>
+   <slot>resizeColumnsToContents()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>809</x>
+     <y>75</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>233</x>
+     <y>222</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_fileway</sender>
+   <signal>clicked()</signal>
+   <receiver>tableWidget_xlsTable</receiver>
+   <slot>resizeRowsToContents()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>809</x>
+     <y>72</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>303</x>
+     <y>211</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>tableWidget_xlsTable</sender>
+   <signal>itemChanged(QTableWidgetItem*)</signal>
+   <receiver>tableWidget_xlsTable</receiver>
+   <slot>update()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>60</x>
+     <y>282</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>34</x>
+     <y>200</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_weightCalculete</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>cellValue_WCalculate()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>291</x>
+     <y>637</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>931</x>
+     <y>562</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cBox_isThereWeight</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>checked_CBox()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>102</x>
+     <y>636</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>0</x>
+     <y>507</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>tableWidget_weights</sender>
+   <signal>itemDoubleClicked(QTableWidgetItem*)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>cellValue()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>82</x>
+     <y>396</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>0</x>
+     <y>363</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>tableWidget_weights</sender>
+   <signal>itemChanged(QTableWidgetItem*)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>cellValue_change()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>163</x>
+     <y>265</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>0</x>
+     <y>154</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>tableWidget_weights</sender>
+   <signal>currentItemChanged(QTableWidgetItem*,QTableWidgetItem*)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>current_item()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>141</x>
+     <y>444</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>0</x>
+     <y>384</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_wCalculate</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>findWeight()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>230</x>
+     <y>648</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>0</x>
+     <y>610</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_saveWeights</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>btn_save_results_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>496</x>
+     <y>737</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>0</x>
+     <y>645</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_addWayCal</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>addRowInTable()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>690</x>
+     <y>644</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>931</x>
+     <y>643</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>cellValue()</slot>
+  <slot>btn_save_results_clicked()</slot>
+  <slot>calculate()</slot>
+  <slot>btn_fileway_clicked()</slot>
+  <slot>cellValue_WCalculate()</slot>
+  <slot>checked_CBox()</slot>
+  <slot>cellValue_change()</slot>
+  <slot>current_item()</slot>
+  <slot>findWeight()</slot>
+  <slot>addRowInTable()</slot>
+ </slots>
+</ui>
